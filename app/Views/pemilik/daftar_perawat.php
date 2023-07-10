@@ -81,9 +81,9 @@
                                                                                                                                     $index++;
                                                                                                                                     ?>
                                         </td>
-                                        <td class="cell100 column2" data-href='<?= base_url('pemilik/data_perawat/' . $per['id']) ?>'><?= $per['nama']; ?></td>
-                                        <td class="cell100 column3" data-href='<?= base_url('pemilik/data_perawat/' . $per['id']) ?>'><?= $per['nik']; ?></td>
-                                        <td class="cell100 column4" data-href='<?= base_url('pemilik/data_perawat/' . $per['id']) ?>'><?= $per['noHP']; ?></td>
+                                        <td class="cell100 column2" href='<?= base_url('pemilik/data_perawat/' . $per['id']) ?>'><?= $per['nama']; ?></td>
+                                        <td class="cell100 column3" href='<?= base_url('pemilik/data_perawat/' . $per['id']) ?>'><?= $per['nik']; ?></td>
+                                        <td class="cell100 column4" href='<?= base_url('pemilik/data_perawat/' . $per['id']) ?>'><?= $per['noHP']; ?></td>
                                         <td class="cell column5">
                                             <a href="<?= base_url('pemilik/edit_perawat/' . $per['id']) ?>">
                                                 <img src="<?= base_url('images/edit-blue.png') ?>" class="img-thumbnail" style="height: 30px;" alt="">

@@ -232,7 +232,7 @@ class Dokter extends BaseController
         } catch (\Exception $ex) {
             $session->setFlashdata('error', "Data Rekam Medis Gagal Diubah\n" . $ex);
         } finally {
-            return redirect()->to('dokter/riwayat/' . $soap['idPasien']);
+            return redirect()->to('dokter/soap/' . $soap['idPasien']);
         }
     }
 

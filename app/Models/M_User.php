@@ -8,4 +8,5 @@ class M_User extends Model
 {
     protected $table = 'tb_user';
     protected $allowedFields = ['username', 'password', 'jabatan', 'id'];
+    protected $primaryKey = 'username';
 }

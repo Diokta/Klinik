@@ -30,10 +30,12 @@ class Perawat extends BaseController
         $user["jabatan"] = "PERAWAT";
 
         $data['pasien'] = $this->M_Pasien->where(["id" => $id])->first();
+        $data['sameDay']=false;
         $data['assesment'] = $this->M_Assesment->where(["idPasien" => $id])->orderBy('tanggal', 'desc')->first();
-        $terakhirDaftar = date_format(new DateTime($data['assesment']['tanggal']), 'd/m/Y');
-        $now = date("d/m/Y");
+       
         if ($data['assesment']) {
+            $terakhirDaftar = date_format(new DateTime($data['assesment']['tanggal']), 'd/m/Y');
+            $now = date("d/m/Y");
             if ($now == $terakhirDaftar) {
                 $data['sameDay'] = true;
             }

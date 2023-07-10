@@ -55,6 +55,8 @@ class Pemilik extends BaseController
         $user["jabatan"] = "SUPER ADMIN";
 
         $data['dokter'] = $this->M_Dokter->where(["id" => $id])->first();
+        $data['akun'] = $this->M_User->where(['id' => $id, 'jabatan' => 'dokter'])->first();
+
         date_default_timezone_set('Asia/Jakarta');
         $currentDate = new DateTime();
         $tanggalLahir = new DateTime($data['dokter']['tanggalLahir']);
@@ -129,6 +131,7 @@ class Pemilik extends BaseController
 
 
         $data['dokter'] = $this->M_Dokter->where(["id" => $id])->first();
+        $data['akun'] = $this->M_User->where(['id' => $id, 'jabatan' => 'dokter'])->first();
         echo view('include/header', $user);
         echo view('pemilik/edit_dokter', $data);
         echo view('include/footer');
@@ -163,6 +166,15 @@ class Pemilik extends BaseController
                 'noHP' => $this->request->getVar('noHP'),
                 'email' => $this->request->getVar('email')
             ]);
+
+            // dd($this->request->getVar('usernameLama'));
+            $this->M_User->update(
+                $this->request->getVar('usernameLama'),
+                [
+                    'username' => $this->request->getVar('username'),
+                    'password' => $this->request->getVar('password'),
+                ]
+            );
             $log = 'Mengubah data dokter dengan id ' . $id;
 
             $this->M_Log->insert([
@@ -253,6 +265,7 @@ class Pemilik extends BaseController
         $user["jabatan"] = "SUPER ADMIN";
 
         $data['perawat'] = $this->M_Perawat->where(["id" => $id])->first();
+        $data['akun'] = $this->M_User->where(['id' => $id, 'jabatan' => 'perawat'])->first();
         date_default_timezone_set('Asia/Jakarta');
         $currentDate = new DateTime();
         $tanggalLahir = new DateTime($data['perawat']['tanggalLahir']);
@@ -326,6 +339,7 @@ class Pemilik extends BaseController
         $user["jabatan"] = "SUPER ADMIN";
 
         $data['perawat'] = $this->M_Perawat->where(["id" => $id])->first();
+        $data['akun'] = $this->M_User->where(['id' => $id, 'jabatan' => 'perawat'])->first();
         echo view('include/header', $user);
         echo view('pemilik/edit_perawat', $data);
         echo view('include/footer');
@@ -360,6 +374,13 @@ class Pemilik extends BaseController
                 'noHP' => $this->request->getVar('noHP'),
                 'email' => $this->request->getVar('email')
             ]);
+            $this->M_User->update(
+                $this->request->getVar('usernameLama'),
+                [
+                    'username' => $this->request->getVar('username'),
+                    'password' => $this->request->getVar('password'),
+                ]
+            );
             $log = 'Mengubah data Perawat dengan id ' . $id;
 
             $this->M_Log->insert([
@@ -447,6 +468,7 @@ class Pemilik extends BaseController
         $user = $this->M_Pemilik->where('id', $_SESSION['id'])->first();
         $user["jabatan"] = "SUPER ADMIN";
         $data['admin'] = $this->M_Admin->where(["id" => $id])->first();
+        $data['akun'] = $this->M_User->where(['id' => $id, 'jabatan' => 'admin'])->first();
         date_default_timezone_set('Asia/Jakarta');
         $currentDate = new DateTime();
         $tanggalLahir = new DateTime($data['admin']['tanggalLahir']);
@@ -495,6 +517,7 @@ class Pemilik extends BaseController
                     'jabatan' => 'admin',
                     'id' => $id,
                 ]);
+
                 $log = 'Menambahkan data Administrator dengan id ' . $id . ' a/n ' . $this->request->getVar('nama');
 
                 $this->M_Log->insert([
@@ -521,6 +544,7 @@ class Pemilik extends BaseController
 
 
         $data['admin'] = $this->M_Admin->where(["id" => $id])->first();
+        $data['akun'] = $this->M_User->where(['id' => $id, 'jabatan' => 'admin'])->first();
         echo view('include/header', $user);
         echo view('pemilik/edit_admin', $data);
         echo view('include/footer');
@@ -554,6 +578,13 @@ class Pemilik extends BaseController
                 'noHP' => $this->request->getVar('noHP'),
                 'email' => $this->request->getVar('email')
             ]);
+            $this->M_User->update(
+                $this->request->getVar('usernameLama'),
+                [
+                    'username' => $this->request->getVar('username'),
+                    'password' => $this->request->getVar('password'),
+                ]
+            );
             $log = 'Mengubah data Administrator dengan id ' . $id;
 
             $this->M_Log->insert([
@@ -646,6 +677,7 @@ class Pemilik extends BaseController
         $currentDate = new DateTime();
         $tanggalLahir = new DateTime($data['apoteker']['tanggalLahir']);
         $data['apoteker']['umur'] = $tanggalLahir->diff($currentDate)->format('%y Tahun %m Bulan %d Hari');
+        $data['akun'] = $this->M_User->where(['id' => $id, 'jabatan' => 'apoteker'])->first();
         echo view('include/header', $user);
         echo view('pemilik/data_apoteker', $data);
         echo view('include/footer');
@@ -715,6 +747,7 @@ class Pemilik extends BaseController
         $user["jabatan"] = "SUPER ADMIN";
 
         $data['apoteker'] = $this->M_Apoteker->where(["id" => $id])->first();
+        $data['akun'] = $this->M_User->where(['id' => $id, 'jabatan' => 'apoteker'])->first();
         echo view('include/header', $user);
         echo view('pemilik/edit_apoteker', $data);
         echo view('include/footer');
@@ -749,6 +782,13 @@ class Pemilik extends BaseController
                 'noHP' => $this->request->getVar('noHP'),
                 'email' => $this->request->getVar('email')
             ]);
+            $this->M_User->update(
+                $this->request->getVar('usernameLama'),
+                [
+                    'username' => $this->request->getVar('username'),
+                    'password' => $this->request->getVar('password'),
+                ]
+            );
             $log = 'Mengubah data Perawat dengan id ' . $id;
 
             $this->M_Log->insert([

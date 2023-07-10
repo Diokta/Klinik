@@ -68,20 +68,6 @@
     </div>
 </div>
 
-<!-- Modal Template Riwayat -->
-<div class="modal fade" id="modalRiwayat" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ModalLabel">Riwayat Rekam Medis</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <?php include('riwayat.php') ?>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="container mt-1 ms-4 me-0 mw-100">
     <div class="row w-auto me-4">
@@ -307,6 +293,22 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Template Riwayat -->
+<div class="modal fade" id="modalRiwayat" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Riwayat Rekam Medis</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <?php include('riwayat.php') ?>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
     $('.btn-modal-resep').on('click', function(e) {
         e.preventDefault();

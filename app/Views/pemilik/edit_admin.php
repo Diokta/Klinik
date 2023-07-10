@@ -44,19 +44,23 @@
                     </div>
                 </div>
                 <form action="<?= base_url('pemilik/update_admin/' . $admin['id']) ?>" method="POST">
-                    <!-- <div class="row form-group">
+                    <!-- <div class="row form-group"> -->
+                    <input type="hidden" class="form-control" name="usernameLama" id="usernameLama" autocomplete="off" value="<?= $akun['username']; ?>" required>
+                    <!-- </div> -->
+                    <div class="row form-group">
                         <p>Username</p>
-                        <input type="text" class="form-control" name="username" id="username" autocomplete="off">
+                        <input type="text" class="form-control" name="username" id="username" autocomplete="off" value="<?= $akun['username']; ?>" required>
                     </div>
                     <div class="row form-group">
                         <p>Password</p>
-                        <input type="password" class="form-control" name="password" id="password" autocomplete="off">
+                        <input type="password" class="form-control" name="password" id="password" autocomplete="off" value="<?= $akun['password']; ?>" required>
+                        <!-- An element to toggle between password visibility -->
 
                     </div>
                     <input type="checkbox" class="form-check-input" id="showPassword" onclick="myFunction()">
                     <label class="form-check-label" for="showPassword">Show Password</label>
                     <br>
-                    <br> -->
+                    <br>
                     <div class="row form-group">
                         <p>Nama Lengkap</p>
                         <input type="text" class="form-control" name="nama" id="nama" autocomplete="off" value="<?= $admin['nama']; ?>" required>

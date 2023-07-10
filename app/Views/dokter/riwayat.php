@@ -35,23 +35,23 @@
                         <div class="col">
                             <h5 class="fw-bold" style="color: 2269D2;">SUBJECTIVE</h5>
                             <div class="border-2 p-1 overflow-auto" style="height: 220; width: 300;">
-                                <?= nl2br($soap['subjective']); ?>
+                                <?= nl2br(str_replace('<','< ',$soap['subjective'])); ?>
                             </div>
                             <br>
                             <h5 class="fw-bold" style="color: 2269D2;">ASSESSMENT</h5>
                             <div class="border-2 p-1 overflow-auto" style="height: 220; width: 300;">
-                                <?= nl2br($soap['assesment']); ?>
+                                <?= nl2br(str_replace('<','< ',$soap['assesment'])); ?>
                             </div>
                         </div>
                         <div class="col">
                             <h5 class="fw-bold" style="color: 2269D2;">OBJECTIVE</h5>
                             <div class="border-2 p-1 overflow-auto" style="height: 220; width: 300;">
-                                <?= nl2br($soap['objective']); ?>
+                                <?= nl2br(str_replace('<','< ',$soap['objective'])); ?>
                             </div>
                             <br>
                             <h5 class="fw-bold" style="color: 2269D2;">PLANNING</h5>
                             <div class="border-2 p-1 overflow-auto" style="height: 220; width: 300;">
-                                <?= nl2br($soap['planning']); ?>
+                                <?= nl2br(str_replace('<','< ',$soap['planning'])); ?>
                             </div>
                         </div>
                         <div class="col text-right">
