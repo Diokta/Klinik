@@ -1,29 +1,27 @@
 {
     "name": "codeigniter4/appstarter",
-    "type": "project",
     "description": "CodeIgniter4 starter app",
-    "homepage": "https://codeigniter.com",
     "license": "MIT",
+    "type": "project",
+    "homepage": "https://codeigniter.com",
+    "support": {
+        "forum": "https://forum.codeigniter.com/",
+        "source": "https://github.com/codeigniter4/CodeIgniter4",
+        "slack": "https://codeigniterchat.slack.com"
+    },
     "require": {
-        "php": "^7.3 || ^8.0",
-        "codeigniter4/framework": "^4",
-        "twbs/bootstrap": "5.0.2",
-        "tecnickcom/tcpdf": "^6.4",
-        "myth/auth": "^1.0"
+        "php": "^7.4 || ^8.0",
+        "codeigniter4/framework": "^4.0",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "realrashid/sweet-alert": "^7.1",
+        "twbs/bootstrap": "^5.3"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9",
         "mikey179/vfsstream": "^1.6",
         "phpunit/phpunit": "^9.1"
     },
-    "suggest": {
-        "ext-fileinfo": "Improves mime type detection for files"
-    },
     "autoload": {
-        "psr-4": {
-            "App\\": "app",
-            "Config\\": "app/Config"
-        },
         "exclude-from-classmap": [
             "**/Database/Migrations/**"
         ]
@@ -33,12 +31,12 @@
             "Tests\\Support\\": "tests/_support"
         }
     },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
     "scripts": {
         "test": "phpunit"
-    },
-    "support": {
-        "forum": "http://forum.codeigniter.com/",
-        "source": "https://github.com/codeigniter4/CodeIgniter4",
-        "slack": "https://codeigniterchat.slack.com"
     }
 }

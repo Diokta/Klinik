@@ -5,11 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Rekam Medis Klinik dr. Farabi</title>
 
-	<!-- Bootstrap core CSS-->
-	<link rel="stylesheet" href="<?= base_url('css/bootstrap.min.css') ?>">
-	<!-- Bootstrap core JS-->
-	<script src="<?= base_url('js/bootstrap.bundle.min.js') ?>"></script>
-	<script src="<?= base_url('js/bootstrap.min.js') ?>"></script>
+	<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <style>
 	.vertical-center {
@@ -47,7 +44,7 @@
 								Anda belum memasukan password.
 							</div>
 						</div>
-						<div class="row justify-content-center py-4 bg-white">
+						<div class="row justify-content-center py-4">
 							<div class="col text-center">
 								<button type="submit" class="btn btn-primary text-center px-3 py-2" name="simpan">LOGIN</button>
 							</div>
